@@ -1,14 +1,8 @@
 $(document).ready(function() {
-//FIREBASE=========================================================
 
 // Initialize Firebase - Provided by firebase webpage
 var config = {
-    apiKey: "AIzaSyC3N4z4WbhhXyxD3LHvI4Ksxm_VUi_3yrY",
-    authDomain: "train-scheduler-21669.firebaseapp.com",
-    databaseURL: "https://train-scheduler-21669.firebaseio.com",
-    projectId: "train-scheduler-21669",
-    storageBucket: "",
-    messagingSenderId: "1094266374433"
+    // firebase key removed for security reasons
   };
   firebase.initializeApp(config);
 
