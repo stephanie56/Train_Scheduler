@@ -46,19 +46,23 @@ $(document).ready(function() {
   // get a snapshot of the stored data.
   // This function allows you to update your page in real-time when the firebase database changes.
 
-  database.ref.on("child_added", function(snapshot) {
-    console.log(snapshot.val());
+  database.ref().on("value", function(snapshot) {
+    var data = snapshot.val();
 
-    // Store everything into a variable
-    var currentTrainName = snapshot.val().train_name;
-    var currentTrainDest = snapshot.val().train_dest;
-    var currentTrainTime = snapshot.val().train_time;
-    var currentTrainFreq = snapshot.val().train_freq;
+    for(var key in data){
+      // Store everything into a variable
+    var currentTrainName = data[key].train_name;
+    var currentTrainDest = data[key].train_dest;
+    var currentTrainTime = data[key].train_time;
+    var currentTrainFreq = data[key].train_freq;
 
     console.log(currentTrainName);
     console.log(currentTrainDest);
     console.log(currentTrainTime);
     console.log(currentTrainFreq);
+    }
+
+    
 
     // Add each train's data into the table
     $("#trainInfo > tbody").append("<tr><td>" + currentTrainName + "</td><td>" +currentTrainDest + "</td><td>" +  "</td></tr>");
